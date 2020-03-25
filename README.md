@@ -10,13 +10,9 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 1. In order to buid and run this project you need to have Java and Maven installed in your local machine.
- - Learn how to download and install [Java JDK 8](https://www.guru99.com/install-java.html) and [Maven](http://maven.apache.org/install.html).
- - You can check the Java and Maven version by typing in the command line
-```
-java -version
+    - Learn how to download and install [Java JDK 8](https://www.guru99.com/install-java.html) and [Maven](http://maven.apache.org/install.html).
+    - You can check the Java and Maven version by typing in the command line `java -version` and `mvn -v`
 
-mvn -v
-```
 2. You should also have a file with grades on your local machine where each grade must be in a different line.
 
 ### Installing
