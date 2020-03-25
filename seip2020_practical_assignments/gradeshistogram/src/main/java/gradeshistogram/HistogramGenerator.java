@@ -17,18 +17,27 @@ import org.jfree.data.xy.XYSeriesCollection;
 public class HistogramGenerator {
 
 	public static void main(String[] args) {
+		String path = args[0];
 		HistogramGenerator obj = new HistogramGenerator();
-		int grades[] = obj.readGrades();
+		int grades[] = obj.readGrades(path);
 		obj.generateChart(grades);
-
 	}
-
-	public int[] readGrades() {
+	
+	
+	
+	/***
+	 * Receives a string variable with the given path of the file.
+	 * Reads a file from a local directory and stores them in an array.
+	 * @param path
+	 * 		string variable with the given path of the file
+	 * @return the array of integers.
+	 */
+	public int[] readGrades(String path) {
 		StringBuilder sb = new StringBuilder();
 		String strLine = "";
 		List<String> list = new ArrayList<String>();
 		try {
-			BufferedReader br = new BufferedReader(new FileReader("C:/Users/dafni/Desktop/grades.txt"));
+			BufferedReader br = new BufferedReader(new FileReader(path));
 			while (strLine != null) {
 				strLine = br.readLine();
 				sb.append(strLine);
@@ -37,7 +46,6 @@ public class HistogramGenerator {
 					break;
 				list.add(strLine);
 			}
-			System.out.println(Arrays.toString(list.toArray()));
 			br.close();
 		} catch (FileNotFoundException e) {
 			System.err.println("File not found");
@@ -46,17 +54,19 @@ public class HistogramGenerator {
 		}
 
 		/*
-		 * Converts a string array to an integer array
+		 * Converts string array to integer array
 		 */
 		int size = list.size();
 		int[] arr = new int[size];
 		for (int i = 0; i < size; i++) {
 			arr[i] = Integer.parseInt(list.get(i));
 		}
-		System.out.println(Arrays.toString(arr));
+		//System.out.println(Arrays.toString(arr));
 		
 		return arr;
 	}
+	
+	
 
 	/***
 	 * Receives a single dimension Integer array. From this array the dataset that
@@ -68,25 +78,11 @@ public class HistogramGenerator {
 	 *            Single dimension integer array
 	 */
 	public void generateChart(int[] dataValues) {
-		/*
-		 * The XYSeriesCollection object is a set XYSeries series (dataset) that can be
-		 * visualized in the same chart
-		 */
 		XYSeriesCollection dataset = new XYSeriesCollection();
-		/*
-		 * The XYSeries that are loaded in the dataset. There might be many series in
-		 * one dataset.
-		 */
 		XYSeries data = new XYSeries("random values");
-
-		/*
-		 * Populating the XYSeries data object from the input Integer array values.
-		 */
 		for (int i = 0; i < dataValues.length; i++) {
 			data.add(i, dataValues[i]);
 		}
-
-		// add the series to the dataset
 		dataset.addSeries(data);
 
 		boolean legend = false; // do not visualize a legend
@@ -94,16 +90,11 @@ public class HistogramGenerator {
 		boolean urls = false; // do not visualize urls
 
 		// Declare and initialize a createXYLineChart JFreeChart
-		JFreeChart chart = ChartFactory.createXYLineChart("Chart title", "x_axis title", "y_axis_title", dataset,
+		JFreeChart chart = ChartFactory.createXYLineChart("GRADES CHART", "line", "grade", dataset,
 				PlotOrientation.VERTICAL, legend, tooltips, urls);
 
-		/*
-		 * Initialize a frame for visualizing the chart and attach the previously
-		 * created chart.
-		 */
 		ChartFrame frame = new ChartFrame("First", chart);
 		frame.pack();
-		// makes the previously created frame visible
 		frame.setVisible(true);
 	}
 
