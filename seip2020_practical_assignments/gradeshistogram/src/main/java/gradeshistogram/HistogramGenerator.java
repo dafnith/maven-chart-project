@@ -6,13 +6,13 @@ import java.io.IOException;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Arrays;
+import java.util.HashMap;
+
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.data.xy.XYSeries;
-import org.jfree.data.xy.XYSeriesCollection;
+import org.jfree.data.category.DefaultCategoryDataset;
 
 public class HistogramGenerator {
 
@@ -22,14 +22,13 @@ public class HistogramGenerator {
 		int grades[] = obj.readGrades(path);
 		obj.generateChart(grades);
 	}
-	
-	
-	
+
 	/***
-	 * Receives a string variable with the given path of the file.
-	 * Reads a file from a local directory and stores them in an array.
+	 * Receives a string variable with the given path of the file. Reads a file from
+	 * a local directory and stores them in an array.
+	 * 
 	 * @param path
-	 * 		string variable with the given path of the file
+	 *            string variable with the given path of the file
 	 * @return the array of integers.
 	 */
 	public int[] readGrades(String path) {
@@ -61,8 +60,7 @@ public class HistogramGenerator {
 		for (int i = 0; i < size; i++) {
 			arr[i] = Integer.parseInt(list.get(i));
 		}
-		//System.out.println(Arrays.toString(arr));
-		
+
 		return arr;
 	}
 	
@@ -78,24 +76,40 @@ public class HistogramGenerator {
 	 *            Single dimension integer array
 	 */
 	public void generateChart(int[] dataValues) {
-		XYSeriesCollection dataset = new XYSeriesCollection();
-		XYSeries data = new XYSeries("random values");
-		for (int i = 0; i < dataValues.length; i++) {
-			data.add(i, dataValues[i]);
+
+		// Creating a HashMap object with elements of dataValues as keys and their count as values
+		
+		HashMap<Integer, Integer> elementCountMap = new HashMap<Integer, Integer>();
+		
+		for (int i : dataValues) {
+			if (elementCountMap.containsKey(i)) {
+				
+				// If element is present in elementCountMap, incrementing it's count by 1
+				
+				elementCountMap.put(i, elementCountMap.get(i) + 1);
+			} else {
+				
+				// If element is not present in elementCountMap,
+				// adding this element to elementCountMap with 1 as it's value
+				
+				elementCountMap.put(i, 1);
+			}
 		}
-		dataset.addSeries(data);
 
-		boolean legend = false; // do not visualize a legend
-		boolean tooltips = false; // do not visualize tooltips
-		boolean urls = false; // do not visualize urls
 
-		// Declare and initialize a createXYLineChart JFreeChart
-		JFreeChart chart = ChartFactory.createXYLineChart("GRADES CHART", "line", "grade", dataset,
-				PlotOrientation.VERTICAL, legend, tooltips, urls);
+		DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+		for (int i = 0; i < elementCountMap.size(); i++) {
+			dataValues[i] = (dataValues[i]);
+			dataset.setValue(elementCountMap.get(i), "Grade", Integer.toString(i));
+		}
 
+		JFreeChart chart = ChartFactory.createBarChart("Frequency of Grades", "", "Times", dataset,
+				PlotOrientation.VERTICAL, false, false, false);
+
+		// Declare and initialize a Chart
 		ChartFrame frame = new ChartFrame("First", chart);
 		frame.pack();
 		frame.setVisible(true);
-	}
 
+	}
 }
