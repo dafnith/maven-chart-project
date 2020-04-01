@@ -14,6 +14,17 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 
+
+/***
+ * The purpose of this class is to generate and demonstrate
+ * a frequency histogram given a file of grades.
+ * the x axis represents the grades and the y axis represents
+ * the frequency of each grade.
+ *         
+ * @author dafnith
+ * @since March 2020 
+ */
+
 public class HistogramGenerator {
 
 	public static void main(String[] args) {
