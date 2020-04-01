@@ -7,6 +7,6 @@
   <modules>
   	<module>gradeshistogram</module>
   </modules>
-  <name>parent</name>
-  <description>parent of gradeshistogram module</description>
+  <name>practical assignments 2020</name>
+  <description>Assignments to get familiar with Maven project, git, unit testing.</description>
 </project>

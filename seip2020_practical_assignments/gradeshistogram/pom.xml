@@ -9,7 +9,7 @@
 	</parent>
 	<artifactId>gradeshistogram</artifactId>
 	<name>histogram</name>
-	<description>module that creates a grades histogram</description>
+	<description>Generates and demonstrates a frequency histogram given a file of grades. The x axis represents the grades and the y axis represents the frequency of each grade.</description>
 
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.jfree/jfreechart -->
