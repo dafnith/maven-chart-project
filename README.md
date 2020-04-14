@@ -1,9 +1,12 @@
+[![Build Status](https://travis-ci.com/dafnith/maven-chart-project.svg?token=bsqZkVqqteUxdJRUn1Ex&branch=development)](https://travis-ci.com/dafnith/maven-chart-project)
+
 # Practical Assignments in Software Engineering
 
 The goal of this project is to get a better understanding on
 - Build Automation tools such as Maven
-- Continious Integration (Travis),
+- Continious Integration (Travis)
 - Unit Testing
+
 This project is an assignment for Software Eningineering in Practice (SEiP) course offered by the [Department of Management Science & Technology](https://www.dept.aueb.gr/en/dmst) of the Athens University of Economics and Business.
 
 
