@@ -6,6 +6,7 @@
   <packaging>pom</packaging>
   <modules>
   	<module>gradeshistogram</module>
+  	<module>unittesting</module>
   </modules>
   <name>practical assignments 2020</name>
   <description>Assignments to get familiar with Maven project, git, unit testing.</description>
