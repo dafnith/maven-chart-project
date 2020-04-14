@@ -7,8 +7,8 @@ A java project that creates a histogram based on a file with grades.
 
 This repository consists of the parent Maven project (seip2020_practical_assignments) and two Maven modules that are sub-projects of the parent.
 
-1. [histogram](gradeshistogram) - Generates and demonstrates a frequency histogram given a file of grades.
-2. [Unit Testing practice project](unittesting) - A project for practicing Unit Testing 
+1. [histogram](seip2020_practical_assignments/gradeshistogram) - Generates and demonstrates a frequency histogram given a file of grades.
+2. [Unit Testing practice project](seip2020_practical_assignments/unittesting) - A project for practicing Unit Testing 
 
 ## Getting Started
 
@@ -42,8 +42,8 @@ mvn package
 
 In order to run the projects follow the instructions in the README files given bellow.
 
-- [histogram](gradeshistogram/README.md)
-- [Unit Testing practice project](unittesting/README.md)
+- [histogram](seip2020_practical_assignments/gradeshistogram/README.md)
+- [Unit Testing practice project](seip2020_practical_assignments/unittesting/README.md)
 
 
 ## Built With
