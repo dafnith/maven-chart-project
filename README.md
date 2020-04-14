@@ -1,6 +1,9 @@
 # Practical Assignments in Software Engineering
 
-A java project that creates a histogram based on a file with grades.
+The goal of this project is to get a better understanding on
+- Build Automation tools such as Maven
+- Continious Integration (Travis),
+- Unit Testing
 
 
 ## Project Structure
