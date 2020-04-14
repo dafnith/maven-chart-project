@@ -1,7 +1,6 @@
 # Unit Testing practice project
 
-A project for practicing Unit Testing
-
+The goal of this project is to get familiar with Unit testing and Continious Integration (Travis).
 
 
 
