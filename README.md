@@ -1,7 +1,14 @@
-# maven-chart-project
+# Practical Assignments in Software Engineering
 
 A java project that creates a histogram based on a file with grades.
 
+
+## Project Structure
+
+This repository consists of the parent Maven project (seip2020_practical_assignments) and two Maven modules that are sub-projects of the parent.
+
+1. [histogram](gradeshistogram) - Generates and demonstrates a frequency histogram given a file of grades.
+2. [Unit Testing practice project](unittesting) - A project for practicing Unit Testing 
 
 ## Getting Started
 
@@ -31,17 +38,12 @@ Execute the following command in the repository root directory in order to build
 mvn package
 ```
 
-### Running the project
+### Running the projects
 
-In order to run the project in the command line go to repository's root directory (your local directory where you cloned the project) and type
+In order to run the projects follow the instructions in the README files given bellow.
 
-```
-java -jar seip2020_practical_assignments/gradeshistogram/target/gradeshistogram-0.0.1-SNAPSHOT-jar-with-dependencies.jar <grades file path>
-```
-
-A new window showing a graph should open.
-
-
+- [histogram](gradeshistogram/README.md)
+- [Unit Testing practice project](unittesting/README.md)
 
 
 ## Built With
