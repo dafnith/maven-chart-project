@@ -4,6 +4,7 @@ The goal of this project is to get a better understanding on
 - Build Automation tools such as Maven
 - Continious Integration (Travis),
 - Unit Testing
+This project is an assignment for Software Eningineering in Practice (SEiP) course offered by the [Department of Management Science & Technology](https://www.dept.aueb.gr/en/dmst) of the Athens University of Economics and Business.
 
 
 ## Project Structure
