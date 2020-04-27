@@ -28,6 +28,8 @@ public class ArithmeticOperationsTest {
 	@Test
 	public void testMultiplyWhenProductFitsInVariable( ) {
 		Assert.assertEquals(2, ao.multiply(1, 2), 0);
+		Assert.assertEquals(0, ao.multiply(0, 2), 0);
+		Assert.assertEquals(0, ao.multiply(1, 0), 0);
 	}
 	
 	/*
