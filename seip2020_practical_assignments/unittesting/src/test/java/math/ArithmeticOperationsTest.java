@@ -15,6 +15,7 @@ public class ArithmeticOperationsTest {
 		Assert.assertEquals(2, ao.divide(4, 2), 0);
 		Assert.assertEquals(-1.826, ao.divide(3.14, -1.72), 0.001);
 		Assert.assertEquals(1, ao.divide(1.0/3, 1.0/3), 0);
+		Assert.assertEquals(0, ao.divide(0, 3), 0);
 	}
 	
 	@Test (expected = ArithmeticException.class)
