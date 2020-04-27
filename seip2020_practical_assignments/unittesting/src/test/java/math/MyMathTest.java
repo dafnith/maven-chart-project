@@ -10,8 +10,11 @@ public class MyMathTest {
 	MyMath mm = new MyMath();
 	
 	@Test (expected = IllegalArgumentException.class)
-	public void testFactorialException() {
+	public void testFactorialExceptionNegativeInput() {
 		mm.factorial(-1);
+	}
+	@Test (expected = IllegalArgumentException.class)
+	public void testFactorialExceptionInputBiggerThanTwelve() {
 		mm.factorial(13);
 	}
 	
