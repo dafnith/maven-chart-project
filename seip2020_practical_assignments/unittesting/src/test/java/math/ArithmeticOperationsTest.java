@@ -38,11 +38,18 @@ public class ArithmeticOperationsTest {
 	@Rule 
 	public ExpectedException thrown = ExpectedException.none(); //initialize it to .none()
 	@Test 
-	public void testMultiplyShouldThrowExceptionOnNegativeInput() {
+	public void testMultiplyShouldThrowExceptionOnNegativeFirstInput() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("x & y should be >= 0");
 		ao.multiply(-5, 1);
 	}
+	@Test 
+	public void testMultiplyShouldThrowExceptionOnNegativeSecondInput() {
+		thrown.expect(IllegalArgumentException.class);
+		thrown.expectMessage("x & y should be >= 0");
+		ao.multiply(5, -1);
+	}
+
 	
 	/*
 	 * A test case for the exceptions caused when
