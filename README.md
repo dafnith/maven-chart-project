@@ -1,7 +1,21 @@
-# maven-chart-project
+[![Build Status](https://travis-ci.com/dafnith/maven-chart-project.svg?token=bsqZkVqqteUxdJRUn1Ex&branch=development)](https://travis-ci.com/dafnith/maven-chart-project)
 
-A java project that creates a histogram based on a file with grades.
+# Practical Assignments in Software Engineering
 
+The goal of this project is to get a better understanding on
+- Build Automation tools such as Maven
+- Continious Integration (Travis)
+- Unit Testing
+
+This project is an assignment for Software Eningineering in Practice (SEiP) course offered by the [Department of Management Science & Technology](https://www.dept.aueb.gr/en/dmst) of the Athens University of Economics and Business.
+
+
+## Project Structure
+
+This repository consists of the parent Maven project (seip2020_practical_assignments) and two Maven modules that are sub-projects of the parent.
+
+1. [histogram](seip2020_practical_assignments/gradeshistogram) - Generates and demonstrates a frequency histogram given a file of grades.
+2. [Unit Testing practice project](seip2020_practical_assignments/unittesting) - A project for practicing Unit Testing 
 
 ## Getting Started
 
@@ -31,17 +45,12 @@ Execute the following command in the repository root directory in order to build
 mvn package
 ```
 
-### Running the project
+### Running the projects
 
-In order to run the project in the command line go to repository's root directory (your local directory where you cloned the project) and type
+In order to run the projects follow the instructions in the README files given bellow.
 
-```
-java -jar seip2020_practical_assignments/gradeshistogram/target/gradeshistogram-0.0.1-SNAPSHOT-jar-with-dependencies.jar <grades file path>
-```
-
-A new window showing a graph should open.
-
-
+- [histogram](seip2020_practical_assignments/gradeshistogram/README.md)
+- [Unit Testing practice project](seip2020_practical_assignments/unittesting/README.md)
 
 
 ## Built With

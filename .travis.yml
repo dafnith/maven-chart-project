@@ -1,0 +1,19 @@
+language: java
+
+jdk:
+- openjdk8
+
+branches:
+  only:
+  - master
+  - development
+
+before_script: # Perform commands
+- cd seip2020_practical_assignments
+- ls -la
+
+script: # Build the project
+- mvn clean package jacoco:report
+
+after_success: # Notify users about the result
+- echo “Process terminated successfully”
